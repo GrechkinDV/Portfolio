@@ -1,0 +1,482 @@
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+#roadImg {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  transition: all 2s ease-out;
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+  z-index: -1;
+  scroll-snap-align: end;
+}
+
+.grayScale {
+  -webkit-filter: grayscale(100%) !important; /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%) !important;
+}
+
+#greetingText {
+  position: absolute;
+  top: 25%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  width: 80%;
+  margin: auto 10%;
+
+  text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
+  font-family: "Montserrat", sans-serif;
+}
+
+.fa-chevron-circle-down {
+  position: absolute;
+  width: 10vw;
+  top: 80vh;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    padding-top: 0vh;
+  }
+
+  70% {
+    padding-top: 2vh;
+  }
+
+  100% {
+    padding-top: 0vh;
+  }
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+#greetingText h1 {
+  font-size: 2.8rem;
+  margin: 15px 0;
+}
+
+#greetingText h4 {
+  font-size: 1.2rem;
+}
+
+#servicesSection {
+  background-color: #eee;
+  padding: 50px 30px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: end;
+}
+
+#servicesSection h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+}
+
+#servicesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+
+#servicesContainer div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.fas {
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+#upworkSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh;
+  min-height: 100vh;
+  box-sizing: border-box;
+  scroll-snap-align: end;
+}
+
+#upworkSection h1 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 10vh;
+}
+
+#carouselContainer {
+  width: 90%;
+  -webkit-box-shadow: 0px 0px 20px 0px #000000;
+  box-shadow: 0px 0px 20px 0px #000000;
+}
+
+.review:hover {
+  color: #fff;
+}
+
+.review {
+  text-decoration: underline;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+nav {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 80;
+}
+
+.dark div {
+  background-color: #333;
+}
+
+.light div {
+  background-color: #fff;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.visible {
+  z-index: 15 !important;
+  opacity: 100% !important;
+}
+
+#navigationPanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(30, 67, 85, 0.85);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  z-index: -5;
+  transition: all 1s ease-out;
+}
+
+#navigationPanel span {
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+#navigationPanel span:hover {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+#portfolioSection {
+  background-color: #eee;
+  padding: 50px 30px;
+  min-height: 100vh;
+
+  scroll-snap-align: end;
+}
+
+#porfolioGrid {
+  display: grid;
+  padding: 50px 3vw;
+
+  grid-gap: 1.5vw;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.portfolioItem {
+  border: 1px solid #484848;
+  -webkit-box-shadow: 0px 0px 20px 0px #000000;
+  box-shadow: 0px 0px 12px 0px #000000;
+
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+
+  background-color: #2e2e2e;
+}
+
+#pythonIcon {
+  height: 45px;
+}
+
+#djangoIcon {
+  height: 50px;
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+
+  position: relative;
+  border-bottom: 1px solid #666;
+}
+
+.itemDescription {
+  padding: 20px;
+}
+
+.itemImage {
+  max-width: 100%;
+  height: 30vh;
+}
+
+.portfolioItem h3 {
+  text-align: left;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+.stackList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 10px 0;
+}
+
+.white-color {
+  color: #fff;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.white-color:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.linksSet {
+  display: flex;
+}
+
+/* Colored text  */
+.amber-text {
+  color: #ffc107 !important;
+}
+
+.orange-text {
+  color: #ff9800 !important;
+}
+
+.blue-text {
+  color: #61dbfb !important;
+}
+
+.deep-orange-text {
+  color: #ff5722 !important;
+}
+
+.deep-purple-text {
+  color: #563d7c !important;
+}
+
+.winter-neva-gradient {
+  padding: 0.84rem 2.14rem;
+  margin-right: 10px;
+
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  color: #2e2e2e !important;
+
+  transition: all 0.4s ease-out;
+}
+
+.winter-neva-gradient:active {
+  background-image: linear-gradient(
+    120deg,
+    #a1c4fd 0%,
+    #c2e9fb 100%
+  ) !important;
+}
+
+.winter-neva-gradient:hover {
+  transform: scale(1.05);
+}
+
+/* Grey Map */
+iframe {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale"); /* Firefox 10+ */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(99%); /* Chrome 19+ & Safari 6+ */
+  -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+}
+
+/* Responsive media queries */
+@media only screen and (max-width: 700px) {
+  #servicesContainer,
+  #contacts {
+    flex-direction: column;
+  }
+
+  #contacts {
+    justify-content: unset !important;
+    min-height: 1vh !important;
+    padding: 7vh 0 !important;
+  }
+
+  #greetingText {
+    top: 10% !important;
+  }
+
+  #upworkSection {
+    padding: 3vh;
+  }
+
+  #upworkSection h1 {
+    margin-bottom: 3vh;
+  }
+
+  #carouselContainer {
+    width: 100%;
+  }
+
+  #greetingText h1 {
+    font-size: 2.2rem;
+  }
+
+  #porfolioGrid {
+    padding: 50px 3vw;
+
+    grid-gap: 5vw;
+    grid-template-columns: 100%;
+  }
+
+  #portfolioSection {
+    padding: 30px 0;
+  }
+
+  #portfolioSection h1 {
+    padding-left: 2vw;
+  }
+
+  #navigationPanel span,
+  #servicesSection h1,
+  #upworkSection h1 {
+    font-size: 1.4rem;
+  }
+
+  .itemDescription h3 {
+    font-size: 1.1rem;
+  }
+
+  .itemDescription p {
+    font-size: 0.8rem;
+  }
+
+  .winter-neva-gradient {
+    padding: 0.64rem 1.7rem;
+  }
+
+  .fa-3x {
+    font-size: 2em;
+  }
+
+  .itemImage {
+    height: 45vh;
+  }
+
+  .fas {
+    height: 60px;
+    margin-top: 10px;
+  }
+
+  #djangoIcon,
+  #pythonIcon {
+    height: 30px;
+  }
+
+  nav {
+    right: 15px;
+    top: 15px;
+  }
+
+  .light {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+  .dark {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+  .fa-6x {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #greetingText {
+    top: 20% !important;
+  }
+
+  #greetingText h4 {
+    font-size: 0.9rem;
+  }
+
+  #greetingText h1 {
+    font-size: 1.4rem;
+  }
+}
